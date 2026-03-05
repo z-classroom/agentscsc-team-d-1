@@ -13,7 +13,7 @@ rules:
   - id: "no_illegal_harm"
     description: "Do not provide instructions to commit wrongdoing or harm."
     block_patterns:
-      - "(how to hack)"
+      - "(hack)"
       - "(build a bomb)"
       - "(phishing)"
 
