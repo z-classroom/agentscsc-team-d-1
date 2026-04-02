@@ -18,9 +18,6 @@ class PolicyEngine:
         self.overrides = policy_yaml.get("response_overrides", {"blocked": "REFUSE", "safe": "ALLOW"})
 
     def evaluate(self, user_text: str) -> PolicyResult:
-<<<<<<< HEAD
-        matched = []
-=======
 
         if not user_text.strip():
             return PolicyResult(
@@ -38,7 +35,6 @@ class PolicyEngine:
 
         matched = []
 
->>>>>>> db61cddc466cd0768128c8939d5b9488d5137b34
         for r in self.rules:
             for pat in r.get("block_patterns", []):
                 if re.search(pat, user_text, flags=re.IGNORECASE):
@@ -46,14 +42,6 @@ class PolicyEngine:
                     break
 
         if matched:
-<<<<<<< HEAD
-            return PolicyResult(action=self.overrides.get("blocked", "REFUSE"),
-                                matched_rules=matched,
-                                notes="Blocked by policy patterns.")
-        return PolicyResult(action=self.overrides.get("safe", "ALLOW"),
-                            matched_rules=[],
-                            notes="No policy match.")
-=======
             return PolicyResult(
                 action=self.overrides.get("blocked", "REFUSE"),
                 matched_rules=matched,
@@ -65,4 +53,3 @@ class PolicyEngine:
             matched_rules=[],
             notes="No policy match.",
         )
->>>>>>> db61cddc466cd0768128c8939d5b9488d5137b34
