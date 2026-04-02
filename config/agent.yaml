@@ -1,7 +1,28 @@
 # configuration control file
 #Identifies the specific agent instance.
 agent_name: "TrustyAgent"
+<<<<<<< HEAD
 version: "0.1"
+=======
+version: "0.2"
+
+identity:
+  description: "YOUR DEFINITION"
+  disclosure: "YOUR DEFINITION"
+
+authority:
+  allowed_tasks:
+    - "YOUR DEFINITION"
+    - "YOUR DEFINITION"
+    - "YOUR DEFINITION"
+    - "more if you like"
+
+  forbidden_tasks:
+    - "YOUR DEFINITION"
+    - "YOUR DEFINITION"
+    - "YOUR DEFINITION"
+    - "more if you like"
+>>>>>>> db61cddc466cd0768128c8939d5b9488d5137b34
 
 # A safety limit to prevent the agent from looping infinitely and wasting API credits.
 max_turns: 20
